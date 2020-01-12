@@ -9,8 +9,6 @@ FOLDER_NAME_GIT=${LINK##*/}
 # the folder name contains .git --- use sed to strip it away
 FOLDER_NAME=`echo "$FOLDER_NAME_GIT" | sed -E 's/.git//g'`
 
-# create an alias so I can go into the created folder
-alias fol="cd /$FOLDER_NAME"
 echo Cloning......
 
 # clone the repository
@@ -18,7 +16,7 @@ git clone $LINK
 
 # go into the created directory
 echo cd into $FOLDER_NAME
-fol
 
+cd $FOLDER_NAME
 # Hurray, thats all
 echo Done
